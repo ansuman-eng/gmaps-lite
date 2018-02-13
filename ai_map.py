@@ -37,9 +37,12 @@ def km_perlong(long):
 #Returns SLD needed for heuristics. H value. 
 def sld(x,y):
     return math.sqrt(x*x+y*y)
-
+dbname = input("Type in the database where OSM data (test.sql) was dumped ")
+user = input("Type in your username please ")
+host = input("Host ID (Example : localhost) ")
+password = input("Please enter your password ")
 print("Fetching nodes from Database...")
-con = p.connect("dbname='test' user='postgres' host='localhost' password='ansuman'")
+con = p.connect("dbname={0} user={1} host={2} password={3}".format(dbname,user,host,password))
 cur = con.cursor()
 
 cur.execute("select gid,name,ST_y(geom),ST_x(geom) from points where name!='null'")
@@ -84,7 +87,13 @@ for i in range(124):
             adjacency[j][i]=1
             totcount=totcount+1
 tot=0
-con1 = p.connect("dbname='gvalue' user='postgres' host='localhost' password='ansuman'")
+dbname = input("Type in the database where gvalue data (gvalues.sql) was dumped")
+#user = input("Type in your username please")
+#host = input("Host ID (Example : localhost) ")
+#password = input("Please enter your password")
+print("Fetching nodes from Database...")
+con1 = p.connect("dbname={0} user={1} host={2} password={3}".format(dbname,user,host,password))
+#con1 = p.connect("dbname='gvalue' user='postgres' host='localhost' password='ansuman'")
 cur = con1.cursor()
 '''
 for i in range(124):
