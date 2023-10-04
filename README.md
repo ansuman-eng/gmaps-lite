@@ -1,3 +1,5 @@
+<samp>
+  
 # AI_MapSolver_MK1
 A primitive Google Maps substitute.
 
@@ -12,3 +14,4 @@ due to that reasons we lost couple of best results that Google shows.
 The route which is displayed is a shorter path (red dotted line on GoogleMap screenshot), although it might take more time.
 Regardless, the objective of the script, i.e., to find the shortest path using A* implementation was acheived.
 
+</samp>
